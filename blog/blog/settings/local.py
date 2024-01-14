@@ -26,6 +26,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 #settings ckeditor
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BCKEND = 'pillow'
+CKEDITOR_CONFIGS = {
+}
+
 
 
 
