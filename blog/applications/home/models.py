@@ -14,7 +14,7 @@ class Home(TimeStampedModel):
     )
 
     description = models.TextField()
-    about_text = models.TextField(
+    about_title = models.TextField(
         'Titulo Nosotros',
         max_length = 50
     )
