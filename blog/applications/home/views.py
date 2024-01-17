@@ -28,7 +28,7 @@ class HomePageView(TemplateView):
         #entradas recientes
         context["entradas_resientes"] =Entry.objects.entradas_resientes()
         #enviamos formulario de suscripcion
-        context["form"] = Suscribers
+        context["form"] = SuscribersForm
 
         return context
     

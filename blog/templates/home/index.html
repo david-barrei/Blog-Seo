@@ -55,12 +55,12 @@
             <!-- This is the first modal -->
             <div class="reveal" id="exampleModal2" data-reveal style="width: 300px;">
                 <p class="lead">Ingresa tu correo</p>
-                <form class="grid-x grid-margin-x">
+                <form class="grid-x grid-margin-x" method='POST' action='{% url 'home_app:add-suscripcion'%}'> {% csrf_token %}
                     <div class="cell small-12">
                        {{ form.email}}
                     </div>
                     <div class="cell small-12">
-                        <button type="button" class="success button">Suscribirme</button>
+                        <button type="submit" class="success button">Suscribirme</button>
                     </div>
                 </form>
             </div>

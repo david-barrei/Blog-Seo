@@ -21,3 +21,17 @@ class EntryManager(models.Manager):
         return self.filter(
             public = True, 
         ).order_by('-created')[:6]
+    
+    def buscar_entrada(self, kword, categoria):
+        #procedimiento para buscar por categoria o palabra clave
+        if len(categoria) > 0:
+            return self.filter(
+            categoria_short_name = categoria,
+            title__icontains=kword,
+            public = True
+            ).order_by('-created')
+        else:
+            return self.filter(
+                title__icontains=kword,
+                public=True
+            ).order_by('created')
