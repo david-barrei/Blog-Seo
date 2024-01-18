@@ -12,7 +12,7 @@ from django.views.generic import (
 #apps entrada
 from applications.entrada.models import Entry
 from .models import Home
-from .forms import SuscribersForm
+from .forms import SuscribersForm, ContactForm
 
 class HomePageView(TemplateView):
     template_name = "home/index.html"
@@ -35,5 +35,10 @@ class HomePageView(TemplateView):
 
 class Suscribers(CreateView):
     form_class = SuscribersForm
+    success_url = '.'
+
+class ContactForm(CreateView):
+    
+    form_class = ContactForm
     success_url = '.'
 

@@ -26,7 +26,7 @@ class EntryManager(models.Manager):
         #procedimiento para buscar por categoria o palabra clave
         if len(categoria) > 0:
             return self.filter(
-            categoria_short_name = categoria,
+            categoria__short_name = categoria,
             title__icontains=kword,
             public = True
             ).order_by('-created')
@@ -34,4 +34,4 @@ class EntryManager(models.Manager):
             return self.filter(
                 title__icontains=kword,
                 public=True
-            ).order_by('created')
+            ).order_by('-created')
