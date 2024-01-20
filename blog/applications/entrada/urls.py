@@ -9,8 +9,11 @@ urlpatterns = [
     'entradas/',views.EntryListView.as_view(),name ='entry-lista'
     ),
     path(
-    'entrada/<pk>/',views.EntryDetailView.as_view(),name ='entry-detail'
+    'entrada/<slug>/',views.EntryDetailView.as_view(),name ='entry-detail'
     ),
     
 ]
+
+
+
 
