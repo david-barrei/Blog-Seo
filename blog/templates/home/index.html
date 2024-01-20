@@ -2,6 +2,13 @@
 {% extends "home/base_home.html" %}
 {% load  static %}
 
+{% block title %}
+ {{ home.title}}
+{% endblock title %}
+{% block description %}
+<meta name="description" content="{{ home.descripcion }}">
+{% endblock description %}
+
 {% block content %}
 
 {% include "includes/header.html" %}
@@ -78,7 +85,7 @@
             <div class="card" style="width: 100%;">
                 <img src="{{ entrada.image.url }}">
                 <div class="card-section">
-                  <h4><a href="{% url 'entrada_app:entry-detail' entrada.id%}"> {{ entrada.title | truncatechars:60}}</a></h4>
+                  <h4><a href="{% url 'entrada_app:entry-detail' entrada.slug%}"> {{ entrada.title | truncatechars:60}}</a></h4>
                   <p>{{entrada.resume | truncatechars:40}}</p>
                 </div>
             </div>
